@@ -15,10 +15,11 @@
   <link rel="icon" href="images/fevicon.png" type="image/gif" />
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">  
+  <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+    media="screen">
 
 </head>
 <!-- body -->
@@ -46,109 +47,65 @@
             </div>
           </div>
           <div class="col-xl-10 col-lg-10 col-md-10 col-sm-9">
-            
-             <div class="menu-area">
+
+            <div class="menu-area">
               <div class="limit-box">
                 <nav class="main-menu ">
                   <ul class="menu-area-main">
                     <li> <a href="index.html">Inicio</a> </li>
-                
+
                     <li> <a href="about.html">Sobre nosotros</a> </li>
                     <li> <a href="donar.html">Donar</a></li>
                     <li> <a href="pacientes.html">Pacientes</a> </li>
                     <li> <a href="contact.html">Contactanos</a> </li>
-    
-                    <li  class="active"> <a href="login.html">Registrarse</a> </li>
+
+                    <li class="active"> <a href="login.html">Registrarse</a> </li>
                     <li> <a class="last_manu" href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
-                    
-                   </ul>
-                 </nav>
-              
-             </div> 
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-     <!-- end header inner -->
 
-     <!-- end header -->
-   
-</header>
+                  </ul>
+                </nav>
 
-<div class="backgro_mh">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="heding">
-           <h2>Sign up</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end header inner -->
+
+    <!-- end header -->
+
+  </header>
+
+  <div class="backgro_mh">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heding">
+            <h2>Sign up</h2>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container" style="text-align: center;">
-  <div class="heading_login">Sign Up</div>
-  <form action="#" class="form_login" onsubmit="return validateForm()">
-    <input class="input" type="text" name="nombre" id="nombre" placeholder="Nombre">
-    <p id="nombre-error" style="color: red; display: none;">Por favor ingresa tu nombre.</p>
-    <input class="input" type="email" name="email" id="email" placeholder="E-mail">
-    <p id="email-error" style="color: red; display: none;">Por favor ingresa un correo electrónico válido.</p>
-    <input class="input" minlength="5" maxlength="20" type="password" name="password" id="password" placeholder="Password">
-    <p id="password-error" style="color: red; display: none;">La contraseña debe tener entre 5 y 20 caracteres.</p>
-    <input class="login-button" type="submit" value="Registrarse">
-    <p class="signup-link">Ya tienes una cuenta? <a href="login.html">Sign In</a></p>
-    <p id="signup-message" style="display: none;">Te has registrado exitosamente!</p>
-  </form>
-</div>
+  <div class="container" style="text-align: center;">
+    <div class="heading_login">Sign Up</div>
+    <form action="#" class="form_login" onsubmit="return validateForm()">
+      <input class="input" type="text" name="nombre" id="nombre" placeholder="Nombre">
+      <div id="errorName"></div>
+      <input class="input" type="email" name="email" id="email" placeholder="E-mail">
+      <div id="errorEmail"></div>
+      <input class="input" minlength="5" maxlength="20" type="password" name="password" id="password"placeholder="Contraseña">
+      <div id="errorPassword"></div>
+      <input class="login-button" type="submit" value="Registrarse">
+      <p class="signup-link">Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a></p>
+      <p id="signup-message" style="display: none;">Te has registrado exitosamente!</p>
+    </form>
+  </div>
 
-<script>
-  function validateForm() {
-    var form = document.querySelector(".form_login");
-    var nombre = form.querySelector("#nombre").value;
-    var email = form.querySelector("#email").value;
-    var password = form.querySelector("#password").value;
-    var nombreError = document.getElementById("nombre-error");
-    var emailError = document.getElementById("email-error");
-    var passwordError = document.getElementById("password-error");
-    var valid = true;
 
-    if (!nombre.trim()) {
-      nombreError.style.display = "block";
-      valid = false;
-    } else {
-      nombreError.style.display = "none";
-    }
-    
-    if (!email.trim() || !isValidEmail(email)) {
-      emailError.style.display = "block";
-      valid = false;
-    } else {
-      emailError.style.display = "none";
-    }
-
-    if (!password || password.length < 5 || password.length > 20) {
-      passwordError.style.display = "block";
-      valid = false;
-    } else {
-      passwordError.style.display = "none";
-    }
-
-    if (valid) {
-      document.getElementById("signup-message").style.display = "block";
-      return true; // Cambia a true si deseas que el formulario se envíe realmente
-    } else {
-      return false;
-    }
-  }
-
-  function isValidEmail(email) {
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-</script>
-<!-- End Sign Up -->
+  <!-- End Sign Up -->
 
 
 
@@ -156,116 +113,162 @@
 
 
 
-    <!--  footer -->
-    <footr>
-      <div class="footer ">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <form id="contactForm" class="contact_bg" onsubmit="return validateForm()">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Nombre" type="text" name="Your Name" required minlength="6" maxlength="40">
-                        </div>
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Email" type="email" name="Your Email" required>
-                        </div>
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Telefono" type="text" name="Your Phone" pattern="[0-9]{9}" title="Ingrese un número de teléfono válido (9 dígitos)" required>
-                        </div>
-                        <div class="col-md-12">
-                            <textarea class="textarea" placeholder="Mensaje" type="text" name="Message" required minlength="5" maxlength="200" title="favor ingresa tu mensaje"></textarea>
-                        </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                            <button class="send" type="submit">Enviar</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            
-            <script>
-                function validateForm() {
-                    var form = document.getElementById("contactForm");
-                    var inputs = form.querySelectorAll("input, textarea");
-            
-                    for (var i = 0; i < inputs.length; i++) {
-                        if (!inputs[i].value) {
-                            alert("Por favor, complete todos los campos antes de enviar.");
-                            return false;
-                        }
-                    }
-            
-                    alert("Su solicitud de contacto ha sido enviada");
-                    return true;
-                }
-            </script>
-            
-
-            </div>
-            <div class="col-md-12 border_top">
-              <form class="news">
-                <h3>Subscribete para más información y cupones</h3>
-                <input class="newslatter" placeholder="ENTER YOUR MAIL" type="email" name="ENTER YOUR MAIL" required>
-                <button class="submit" type="button" onclick="showModal()">Subscribete</button>
-              </form>
-            </div>
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+  <!--  footer -->
+  <footr>
+    <div class="footer ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <form id="contactForm" class="contact_bg" onsubmit="return validateForm()">
               <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
-                  <div class="address">
-                    <ul class="loca">
-                      <li>
-                        <a href="#"><img src="icon/loc.png" alt="#" /></a>Ubicaciones
-                   
-                        <li>
-                          
-                            <a href="#"><img src="icon/call.png" alt="#" /></a>(+56) 9 1234 5678 </li>
-                          <li>
-                            <a href="#"><img src="icon/email.png" alt="#" /></a>example@gmail.com </li>
-                          </ul>
-                         
-
-                        </div>
-                      </div>
-                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
-                           <ul class="social_link">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                          </ul>
-                       </div>
-                    </div>
+                <div class="col-md-12">
+                  <div class="col-md-12">
+                    <input class="contactus" placeholder="Nombre" type="text" name="Your Name" required minlength="6"
+                      maxlength="40">
                   </div>
+                  <div class="col-md-12">
+                    <input class="contactus" placeholder="Email" type="email" name="Your Email" required>
+                  </div>
+                  <div class="col-md-12">
+                    <input class="contactus" placeholder="Telefono" type="text" name="Your Phone" pattern="[0-9]{9}"
+                      title="Ingrese un número de teléfono válido (9 dígitos)" required>
+                  </div>
+                  <div class="col-md-12">
+                    <textarea class="textarea" placeholder="Mensaje" type="text" name="Message" required minlength="5"
+                      maxlength="200" title="favor ingresa tu mensaje"></textarea>
+                  </div>
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <button class="send" type="submit">Enviar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <script>
+              function validateForm() {
+                var form = document.getElementById("contactForm");
+                var inputs = form.querySelectorAll("input, textarea");
+
+                for (var i = 0; i < inputs.length; i++) {
+                  if (!inputs[i].value) {
+                    alert("Por favor, complete todos los campos antes de enviar.");
+                    return false;
+                  }
+                }
+
+                alert("Su solicitud de contacto ha sido enviada");
+                return true;
+              }
+            </script>
+
+
+          </div>
+          <div class="col-md-12 border_top">
+            <form class="news">
+              <h3>Subscribete para más información y cupones</h3>
+              <input class="newslatter" placeholder="ENTER YOUR MAIL" type="email" name="ENTER YOUR MAIL" required>
+              <button class="submit" type="button" onclick="showModal()">Subscribete</button>
+            </form>
+          </div>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+                <div class="address">
+                  <ul class="loca">
+                    <li>
+                      <a href="#"><img src="icon/loc.png" alt="#" /></a>Ubicaciones
+
+                    <li>
+
+                      <a href="#"><img src="icon/call.png" alt="#" /></a>(+56) 9 1234 5678
+                    </li>
+                    <li>
+                      <a href="#"><img src="icon/email.png" alt="#" /></a>example@gmail.com
+                    </li>
+                  </ul>
+
 
                 </div>
-
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+                <ul class="social_link">
+                  <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
               </div>
             </div>
-          </footr>
-          <!-- end footer -->
+          </div>
 
-             <!-- Modal -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        
-        <p>Te subscribiste con éxito!</p>
-        <button class="close-btn" onclick="closeModal()">Seguir viendo</button>
+        </div>
+
       </div>
     </div>
+  </footr>
+  <!-- end footer -->
 
-          <!-- Javascript files-->
-          <script src="js/jquery.min.js"></script>
-          <script src="js/popper.min.js"></script>
-          <script src="js/bootstrap.bundle.min.js"></script>
-          <script src="js/jquery-3.0.0.min.js"></script>
-          <script src="js/plugin.js"></script>
-          <!-- sidebar -->
-          <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-          <script src="js/custom.js"></script>
-          <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-          <script src="js/modal.js"></script>
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+
+      <p>Te subscribiste con éxito!</p>
+      <button class="close-btn" onclick="closeModal()">Seguir viendo</button>
+    </div>
+  </div>
+  <!-- Validacion Sign Up -->
+  <script>
+    function validateForm() {
+      var nombre = $("#nombre").val();
+      var email = $("#email").val();
+      var password = $("#password").val();
+      $(".error").remove(); // Remove any existing error messages
+      var isValid = true;
+
+      // Validations
+      if (nombre === '') {
+        $("#nombre-error").show();
+        isValid = false;
+      } else {
+        $("#nombre-error").hide();
+      }
+
+      if (email === '' || !email.includes('@') || !email.includes('.')) {
+        $("#email-error").show();
+        isValid = false;
+      } else {
+        $("#email-error").hide();
+      }
+
+      if (password.length < 5 || password.length > 20) {
+        $("#password-error").show();
+        isValid = false;
+      } else {
+        $("#password-error").hide();
+      }
+
+
+      if (!isValid) {
+        return false;
+      } else {
+        $("#signup-message").show();
+        return true;
+      }
+    }
+  </script>
+  <!-- End Validacion Sign Up -->
+
+  <!-- Javascript files-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script src="js/plugin.js"></script>
+  <!-- sidebar -->
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  <script src="js/modal.js"></script>
 
 
 
